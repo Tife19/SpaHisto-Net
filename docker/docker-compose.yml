@@ -1,0 +1,20 @@
+
+version: '3.8'
+
+services:
+  spahisto-net:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: spahisto-net:latest
+    container_name: spahisto-net
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    volumes:
+      - ../data:/app/data
+      - ../output:/app/output
+      - ../notebooks:/app/notebooks
+    stdin_open: true
+    tty: true
+    command: bash
