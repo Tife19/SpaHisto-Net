@@ -12,7 +12,6 @@ The framework performs:
 - Cross-attention multimodal fusion with optional contrastive regularization
 - Multi-task prediction heads for tumor localization and gene expression
 
----
 
 ## Project Structure
 
@@ -36,22 +35,29 @@ SpaHisto-Net/
 
 1. Clone the repository
 
-git clone https://github.com/your-username/SpaHisto-Net.git
-cd SpaHisto-Net
 ```
+- git clone https://github.com/your-username/SpaHisto-Net.git
+- cd SpaHisto-Net
+```
+
 
 2. Install dependencies (Local)
 
+```
 pip install -r requirements.txt
 ```
 
+
 3. Using Docker
 
+```
 Build the Docker image:
-docker build -t spahisto-net -f docker/Dockerfile .
+- docker build -t spahisto-net -f docker/Dockerfile
+```
 
 Run the container with GPU support:
-docker-compose -f docker/docker-compose.yml up
+- docker-compose -f docker/docker-compose.yml up
+```
 
 Or run interactively:
 docker run --gpus all -it --rm   -v $(pwd)/data:/app/data   -v $(pwd)/output:/app/output   spahisto-net
@@ -59,7 +65,7 @@ docker run --gpus all -it --rm   -v $(pwd)/data:/app/data   -v $(pwd)/output:/ap
 
 ## Notes
 
-All major preprocessing and model components are modularized under src/.
+- All major preprocessing and model components are modularized under src/.
 - All major preprocessing and model components are modularized under src/.
 - Configuration is centralized in src/training/config.py.
 - Docker is provided to ensure consistent environments across machines.
