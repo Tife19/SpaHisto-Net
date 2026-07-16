@@ -50,19 +50,19 @@ pip install -r requirements.txt
 
 3. Using Docker
 
-   Build the Docker image:
+- Build the Docker image:
 
 ```
-- docker build -t spahisto-net -f docker/Dockerfile
+docker build -t spahisto-net -f docker/Dockerfile
 ```
 
-Run the container with GPU support:
+- Run the container with GPU support:
 
 ```
-- docker-compose -f docker/docker-compose.yml up
+docker-compose -f docker/docker-compose.yml up
 ```
 
-Or run interactively:
+- Or run interactively:
 
 ```
 docker run --gpus all -it --rm 
