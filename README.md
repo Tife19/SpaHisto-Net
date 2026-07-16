@@ -50,7 +50,7 @@ pip install -r requirements.txt
 
 3. Using Docker
 
-   Build the Docker image:
+ Build the Docker image:
 
 ```
 - docker build -t spahisto-net -f docker/Dockerfile
