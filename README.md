@@ -50,7 +50,7 @@ pip install -r requirements.txt
 
 3. Using Docker
 
-Build the Docker image:
+   Build the Docker image:
 
 ```
 - docker build -t spahisto-net -f docker/Dockerfile
@@ -67,7 +67,7 @@ Or run interactively:
 ```
 docker run --gpus all -it --rm 
   -v $(pwd)/data:/app/data 
-  -v $(pwd)/output:/app/output   
+  -v $(pwd)/output:/app/output 
   spahisto-net
 ```
 
