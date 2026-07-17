@@ -4,17 +4,17 @@ version: '3.8'
 services:
   spahisto-net:
     build:
-      context: ..
+      context: .
       dockerfile: docker/Dockerfile
     image: spahisto-net:latest
     container_name: spahisto-net
-    runtime: nvidia
+    runtime: nvidia          # Will only work if NVIDIA toolkit is installed
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
     volumes:
-      - ../data:/app/data
-      - ../output:/app/output
-      - ../notebooks:/app/notebooks
+      - ./data:/app/data
+      - ./output:/app/output
+      - ./notebooks:/app/notebooks
     stdin_open: true
     tty: true
     command: bash
