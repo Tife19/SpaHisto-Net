@@ -1,6 +1,5 @@
 
-# Base image with PyTorch + CUDA
-FROM pytorch/pytorch:2.3.0-cuda12.1-cudnn8-runtime
+FROM python:3.10-slim
 
 # Set working directory
 WORKDIR /app
@@ -8,20 +7,22 @@ WORKDIR /app
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
     git \
+    build-essential \
     libopenslide0 \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements.txt from root
+# Copy requirements
 COPY requirements.txt .
 
-# Install Python dependencies
+# Upgrade pip and install dependencies
+RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the entire project
+# Copy project files
 COPY . .
 
-# Set PYTHONPATH
+# Set Python path
 ENV PYTHONPATH=/app
 
-# Default entrypoint
+# Entrypoint
 ENTRYPOINT ["bash", "docker/entrypoint.sh"]
