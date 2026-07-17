@@ -74,7 +74,6 @@ docker run --gpus all -it --rm
 ## Notes
 
 - All major preprocessing and model components are modularized under src/.
-- All major preprocessing and model components are modularized under src/.
 - Configuration is centralized in src/training/config.py.
 - Docker is provided to ensure consistent environments across machines.
 
