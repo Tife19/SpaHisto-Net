@@ -64,12 +64,23 @@ docker-compose -f docker/docker-compose.yml up
 
 - Or run interactively:
 
+- GPU mode(only if NVIDIA drivers + Container Toolkit are installed)
+
 ```
 docker run --gpus all -it --rm 
   -v $(pwd)/data:/app/data 
   -v $(pwd)/output:/app/output 
   spahisto-net
 ```
+
+- CPU Mode
+
+```
+docker run -it --rm 
+  -v $(pwd)/data:/app/data 
+  -v $(pwd)/output:/app/output 
+  spahisto-net
+  ```
 
 ## Notes
 
